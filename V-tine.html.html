@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes! 💖</button>
+            <button id="noBtn">No 😢</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("yesBtn").addEventListener("click", function() {
+            // Hide the box before explosion
+            document.querySelector(".container").style.display = "none";
+    
+            // Play Romantic Background Music
+            let music = new Audio("https://www.bensound.com/bensound-music/bensound-love.mp3");
+            music.volume = 0.5;
+            music.play();
+    
+            // Screen Flash Effect
+            let flash = document.createElement("div");
+            flash.classList.add("flash");
+            document.body.appendChild(flash);
+            setTimeout(() => flash.remove(), 500);
+    
+            // Screen Shake for Drama
+            document.body.classList.add("shake");
+            setTimeout(() => document.body.classList.remove("shake"), 1000);
+    
+            // BIG Explosion Effect
+            let explosion = document.createElement("div");
+            explosion.classList.add("explosion");
+            document.body.appendChild(explosion);
+            setTimeout(() => explosion.remove(), 1200);
+    
+            // Fireworks + Hearts Explosion
+            for (let i = 0; i < 30; i++) {
+                let heart = document.createElement("div");
+                heart.classList.add("firework-heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.top = Math.random() * 100 + "vh";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 2000);
+            }
+    
+            // Confetti Explosion
+            for (let i = 0; i < 100; i++) {
+                let confetti = document.createElement("div");
+                confetti.classList.add("confetti");
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.top = Math.random() * 100 + "vh";
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 2000);
+            }
+    
+            // Sound Effect for Explosion
+            let boomSound = new Audio("https://www.myinstants.com/media/sounds/explosion.mp3");
+            boomSound.play();
+    
+            // Sweet Surprise Message After Explosion
+            setTimeout(() => {
+                let message = document.createElement("div");
+                message.classList.add("message");
+                message.innerHTML = "I LOVE YOU SO MUCH! 💖💋 Happy Valentine's Day!";
+                document.body.appendChild(message);
+            }, 2500);
+        });
+    
+        // Make the "No" button run away when hovered
+        document.getElementById("noBtn").addEventListener("mouseover", function() {
+            let maxX = window.innerWidth - this.clientWidth;
+            let maxY = window.innerHeight - this.clientHeight;
+            let newX = Math.random() * maxX;
+            let newY = Math.random() * maxY;
+    
+            this.style.position = "absolute";
+            this.style.left = `${newX}px`;
+            this.style.top = `${newY}px`;
+        });
+    </script>
+    
+    
+    
+    
+
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    
+    <!-- Extra floating hearts -->
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+
+</body>
+</html>
+ 

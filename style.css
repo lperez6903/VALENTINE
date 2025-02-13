@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Floating hearts animation */
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    100% { transform: translateY(-100vh) scale(0.8); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    top: 100%;
+}
+
+/* Glowing Text */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: red;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); }
+    100% { text-shadow: 0 0 20px rgba(255, 0, 0, 1); }
+}
+
+/* Container box */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    width: 320px;
+    border: 3px solid pink;
+    animation: boxGlow 1.5s infinite alternate;
+}
+
+@keyframes boxGlow {
+    0% { box-shadow: 0 0 10px pink; }
+    100% { box-shadow: 0 0 20px red; }
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.8);
+}
+
+#noBtn {
+    background-color: gray;
+    color: white;
+    position: relative;
+}
+
+#yesBtn:hover {
+    background-color: #d90429;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+/* Make the "No" button run away */
+#noBtn:hover {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    transform: translate(-50%, -50%);
+    animation: moveAway 0.3s ease-in-out forwards;
+}
+
+@keyframes moveAway {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 100px); }
+}
+
+/* Floating heart confetti */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    top: 100%;
+    animation: float 5s linear infinite;
+}
+
+/* Random hearts appearing */
+.heart::before {
+    content: "❤️";
+}
+
+/* Floating sparkles */
+.sparkle {
+    position: absolute;
+    color: yellow;
+    font-size: 10px;
+    top: 100%;
+    animation: float 5s linear infinite;
+}
+
+/* Random heart positions */
+@keyframes randomHearts {
+    0% { transform: translateY(0px) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.8); opacity: 0; }
+}
+
+/* Generate hearts randomly */
+.heart:nth-child(1) { left: 10%; font-size: 30px; animation-duration: 5s; }
+.heart:nth-child(2) { left: 20%; font-size: 25px; animation-duration: 6s; }
+.heart:nth-child(3) { left: 30%; font-size: 20px; animation-duration: 7s; }
+.heart:nth-child(4) { left: 40%; font-size: 35px; animation-duration: 8s; }
+.heart:nth-child(5) { left: 50%; font-size: 28px; animation-duration: 5s; }
+.heart:nth-child(6) { left: 60%; font-size: 22px; animation-duration: 6s; }
+.heart:nth-child(7) { left: 70%; font-size: 26px; animation-duration: 7s; }
+.heart:nth-child(8) { left: 80%; font-size: 24px; animation-duration: 8s; }
+.heart:nth-child(9) { left: 90%; font-size: 29px; animation-duration: 5s; }
+
+/* ❤️ Heart Explosion */
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(5); opacity: 0; }
+}
+
+.explosion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: explode 0.5s ease-out;
+}
+
+/* 🎆 Fireworks Effect */
+@keyframes firework {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(0.5); opacity: 0; }
+}
+
+.exploding-heart {
+    position: absolute;
+    color: red;
+    font-size: 40px;
+    animation: firework 1s ease-out forwards;
+}
+
+.exploding-heart::before {
+    content: "❤️";
+}
+
+.flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.9;
+    animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 0.9; }
+    100% { opacity: 0; }
+}
+
+/* ❤️ Big Explosion */
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(10); opacity: 0; }
+}
+
+.explosion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: explode 0.7s ease-out;
+}
+
+/* 🎆 Fireworks Effect */
+@keyframes firework {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(0.5); opacity: 0; }
+}
+
+.firework-heart {
+    position: absolute;
+    color: red;
+    font-size: 50px;
+    animation: firework 1.5s ease-out forwards;
+}
+
+.firework-heart::before {
+    content: "❤️";
+}
+
+/* 🎊 Confetti */
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: gold;
+    border-radius: 50%;
+    animation: fall 2s linear forwards;
+}
+
+/* ✨ Flash Effect */
+.flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.9;
+    animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 0.9; }
+    100% { opacity: 0; }
+}
+
+/* 💥 Screen Shake */
+@keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(-5px, 5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, -5px); }
+    100% { transform: translate(5px, 5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out infinite;
+}
+
+/* 💌 Sweet Message */
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background: pink;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px red;
+    text-align: center;
+}
